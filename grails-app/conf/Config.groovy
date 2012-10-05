@@ -11,6 +11,30 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+
+
+
+/*
+* YUI Minify options
+*/
+
+// do not minify files that have already been minified
+grails.resources.mappers.yuicssminify.excludes = ['**/*.min.css']
+grails.resources.mappers.yuijsminify.excludes = ['**/*.min.js']
+// yes, minify javascript and css
+grails.resources.mappers.yuicssminify.includes = ['**/*.css']
+grails.resources.mappers.yuijsminify.includes = ['**/*.js']
+// obfuscate javascript
+grails.resources.mappers.yuijsminify.js.noMunge = false
+// disable all micro optimizations in javascript files
+grails.resources.mappers.yuijsminify.js.disableOptimizations = false
+//Preserve all semicolons in javascript files
+grails.resources.mappers.yuijsminify.js.preserveAllSemicolons = false
+
+// do not disable
+grails.resources.mappers.yuicssminify.disable=false
+grails.resources.mappers.yuijsminify.disable=false
+
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
